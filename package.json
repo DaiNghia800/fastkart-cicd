@@ -1,0 +1,12 @@
+{
+  "name": "fastkart-cicd",
+  "version": "1.0.0",
+  "description": "Fastkart CI pipeline demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
