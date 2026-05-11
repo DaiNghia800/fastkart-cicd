@@ -1,6 +1,9 @@
 pipeline {
     // Run on any available Jenkins agent
     agent any
+    tools {
+        nodejs 'Node20'
+    }    
 
     stages {
         // Stage 1: Download code from GitHub
