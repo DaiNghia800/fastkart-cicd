@@ -48,3 +48,27 @@ jobs:
           tags: ghcr.io/dainghia800/fastkart-cicd:${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+  deploy-k8s:
+    needs: [build-push]
+    runs-on: ubuntu-latest
+    
+    # This triggers the manual approval pause configured in GitHub Settings
+    environment: production 
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Setup Helm
+        uses: azure/setup-helm@v4
+
+      - name: Setup Kubeconfig (Simulation)
+        run: |
+          echo "Simulating: Extracting KUBECONFIG from GitHub Secrets..."
+          echo "Kubeconfig is ready!"
+          
+      - name: Deploy to K8s with Helm (Simulation)
+        run: |
+          echo "Simulating: Executing helm upgrade command..."
+          echo "helm upgrade --install fastkart ./fastkart-chart --set image.tag=${{ github.sha }} --atomic"
+          echo "Deployment successful! The app is now live. 🚀"
