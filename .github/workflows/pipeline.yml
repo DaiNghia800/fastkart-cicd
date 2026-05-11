@@ -28,10 +28,12 @@ jobs:
           registry: ghcr.io
           username: ${{github.actor}}
           password: ${{secrets.GITHUB_TOKEN}}
+      - name: Convert repository name to lowercase
+        run: echo "REPO_LC=${GITHUB_REPOSITORY,,}" >> $GITHUB_ENV
       - uses: docker/build-push-action@v5
         with:
           push: true
-          tags: ghcr.io/${{github.repository}}:${{github.sha}}
+          tags: ghcr.io/${{ env.REPO_LC }}:${{github.sha}}
   deploy:
     needs: [build-push]
     environment: production
