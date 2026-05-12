@@ -8,7 +8,7 @@ image:
   repository: ghcr.io/dainghia800/fastkart-cicd
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: d59c6b9f8260f4f8788a4bd40e99d0195bce6b07
+  tag: c1952d62bc424d9105b88bfddc5904be748b9421
 
 imagePullSecrets: []
 nameOverride: ""
