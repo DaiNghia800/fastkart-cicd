@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: ghcr.io/dainghia800/fastkart-cicd
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: fb648463903ac7155ded942bd15a7536aa734359
+  tag: d59c6b9f8260f4f8788a4bd40e99d0195bce6b07
 
 imagePullSecrets: []
 nameOverride: ""
